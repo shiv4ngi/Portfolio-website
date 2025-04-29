@@ -33,6 +33,39 @@ const SkillIcons = {
   node: SiNodedotjs,
 };
 
+// Styled component for the skill card with glassmorphism
+const SkillCard = styled(Box)(({ theme }) => ({
+  background: 'rgba(30, 15, 40, 0.45)',
+  border: '1px solid rgba(162, 57, 255, 0.10)',
+  borderRadius: '18px',
+  boxShadow: '0 4px 32px 0 rgba(162, 57, 255, 0.08)',
+  backdropFilter: 'blur(8px)',
+  transition: 'transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s',
+  '&:hover': {
+    transform: 'scale(1.045)',
+    boxShadow: '0 8px 32px 0 rgba(162, 57, 255, 0.18)',
+    borderColor: 'rgba(162, 57, 255, 0.25)',
+  },
+  padding: '20px 24px',
+  marginBottom: '24px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+}));
+
+// Gradient for active progress dots
+const GradientDot = styled(Box)(({ active, theme }) => ({
+  width: '11px',
+  height: '11px',
+  borderRadius: '50%',
+  background: active
+    ? 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)'
+    : alpha('#A239FF', 0.13),
+  boxShadow: active ? '0 0 4px 0 #A239FF55' : 'none',
+  transition: 'background 0.3s, box-shadow 0.3s',
+  marginRight: '3px',
+}));
+
 // Styled component for the skill name and icon container
 const SkillLabel = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -48,43 +81,43 @@ const SkillProgress = styled(Box)(({ theme }) => ({
   gap: "6px",
 }));
 
-// Styled component for individual progress dots
-const ProgressDot = styled(Box)(({ active, theme }) => ({
-  width: "10px",
-  height: "10px",
-  borderRadius: "50%",
-  backgroundColor: active ? "#A239FF" : alpha("#A239FF", 0.3),
-  transition: "background-color 0.3s ease",
-}));
-
 // Individual skill item component
 const SkillItem = ({ name, icon, level }) => {
   const IconComponent = SkillIcons[icon] || null;
 
   // Create an array of 10 dots for the skill level
   const dots = Array.from({ length: 10 }, (_, i) => (
-    <ProgressDot key={i} active={i < level} />
+    <GradientDot key={i} active={i < level} />
   ));
 
   return (
-    <Box sx={{ mb: 4 }}>
+    <SkillCard>
       <SkillLabel>
         {IconComponent && (
-          <IconComponent size={24} style={{ color: "white" }} />
+          <IconComponent
+            size={28}
+            style={{
+              color: 'white',
+              filter: 'drop-shadow(0 2px 8px #A239FF44)',
+              marginRight: 4,
+            }}
+          />
         )}
         <Typography
           variant="body1"
           sx={{
-            color: "white",
-            fontWeight: 500,
-            fontSize: "1rem",
+            color: 'white',
+            fontWeight: 600,
+            fontSize: '1.09rem',
+            letterSpacing: '0.03em',
+            textShadow: '0 2px 8px #0002',
           }}
         >
           {name}
         </Typography>
       </SkillLabel>
       <SkillProgress>{dots}</SkillProgress>
-    </Box>
+    </SkillCard>
   );
 };
 
@@ -106,6 +139,8 @@ const SkillsSection = () => {
         borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
         background:
           "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(20,0,36,0.3) 100%)",
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
       <Container maxWidth="lg">
@@ -115,6 +150,9 @@ const SkillsSection = () => {
             alignItems: "center",
             justifyContent: "center",
             mb: { xs: 6, md: 8 },
+            position: 'relative',
+            zIndex: 2,
+            flexDirection: 'column',
           }}
         >
           <Typography
@@ -125,6 +163,8 @@ const SkillsSection = () => {
               fontSize: { xs: "2.5rem", md: "4rem" },
               textAlign: "center",
               color: "white",
+              letterSpacing: '0.01em',
+              textShadow: '0 2px 16px #A239FF22',
             }}
           >
             {title}
@@ -134,6 +174,21 @@ const SkillsSection = () => {
               color: "#A239FF",
               fontSize: { xs: "2.5rem", md: "4rem" },
               ml: 2,
+              mt: 1,
+              filter: 'drop-shadow(0 2px 8px #A239FF66)',
+            }}
+          />
+          {/* Animated accent divider */}
+          <Box
+            sx={{
+              mt: 2,
+              height: 4,
+              width: 80,
+              borderRadius: 2,
+              background:
+                'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)',
+              boxShadow: '0 2px 16px #A239FF33',
+              animation: 'gradientMove 2.5s linear infinite',
             }}
           />
         </Box>

@@ -60,83 +60,117 @@ const StyledTab = styled(Tab)(({ theme }) => ({
   },
 }));
 
-// Custom styled project card
-const ProjectCard = styled(Card)(({ theme }) => ({
-  borderRadius: "50%",
-  overflow: "hidden",
-  aspectRatio: "1/1",
-  backgroundColor: "transparent",
-  boxShadow: "none",
-  position: "relative",
-  transition: "transform 0.3s ease",
-  "&:hover": {
-    transform: "scale(1.05)",
-    "& .MuiCardContent-root": {
-      opacity: 1,
-    },
-    "& .overlay": {
-      opacity: 0.5,
-    },
+// Modernized Project Card with glassmorphism
+const ModernProjectCard = styled(Card)(({ theme }) => ({
+  borderRadius: '22px',
+  overflow: 'hidden',
+  background: 'rgba(30, 15, 40, 0.55)',
+  border: '1.5px solid rgba(162, 57, 255, 0.13)',
+  boxShadow: '0 8px 32px 0 rgba(162,57,255,0.10)',
+  backdropFilter: 'blur(10px)',
+  position: 'relative',
+  transition: 'transform 0.32s cubic-bezier(.4,2,.6,1), box-shadow 0.32s',
+  '&:hover': {
+    transform: 'scale(1.045)',
+    boxShadow: '0 12px 48px 0 #A239FF33',
+    borderColor: 'rgba(162, 57, 255, 0.22)',
   },
+  aspectRatio: '1/1',
+  minHeight: 320,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-end',
 }));
 
-const CircularImage = styled(CardMedia)(({ theme }) => ({
-  width: "100%",
-  height: "100%",
-  borderRadius: "50%",
-  objectFit: "cover",
+const ModernProjectImage = styled(CardMedia)(({ theme }) => ({
+  width: '100%',
+  height: '65%',
+  objectFit: 'cover',
+  borderTopLeftRadius: '22px',
+  borderTopRightRadius: '22px',
+  background: 'linear-gradient(135deg, #A239FF22 0%, #5BFFB322 100%)',
 }));
 
-const ProjectDateTypography = styled(Typography)(({ theme }) => ({
-  position: "absolute",
-  top: "10%",
-  left: "10%",
-  color: "white",
-  fontSize: "14px",
-  fontWeight: 500,
-  zIndex: 10,
-}));
-
-const ProjectOverlay = styled(Box)(({ theme }) => ({
-  position: "absolute",
+const ModernProjectOverlay = styled(Box)(({ theme }) => ({
+  position: 'absolute',
   top: 0,
   left: 0,
-  width: "100%",
-  height: "100%",
-  backgroundColor: "black",
-  opacity: 0.2,
-  transition: "opacity 0.3s ease",
+  width: '100%',
+  height: '100%',
+  background:
+    'linear-gradient(120deg, rgba(162,57,255,0.08) 0%, rgba(0,0,0,0.25) 100%)',
+  opacity: 0.14,
+  transition: 'opacity 0.3s',
   zIndex: 1,
-  borderRadius: "50%",
-}));
-
-const ProjectContent = styled(CardContent)(({ theme }) => ({
-  position: "absolute",
-  bottom: "20%",
-  right: "10%",
-  display: "flex",
-  alignItems: "center",
-  gap: "8px",
-  backgroundColor: "transparent",
-  padding: 0,
-  zIndex: 2,
-  transition: "all 0.3s ease",
-}));
-
-const SeeAllButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "#8A2BE2",
-  color: "white",
-  borderRadius: "50px",
-  padding: "12px 24px",
-  textTransform: "uppercase",
-  fontWeight: 600,
-  fontSize: "14px",
-  letterSpacing: "1px",
-  boxShadow: "0 4px 20px rgba(138, 43, 226, 0.4)",
-  "&:hover": {
-    backgroundColor: "#9B30FF",
-    boxShadow: "0 6px 25px rgba(138, 43, 226, 0.6)",
+  pointerEvents: 'none',
+  borderRadius: '22px',
+  '&:hover': {
+    opacity: 0.25,
   },
+}));
+
+const ModernProjectContent = styled(CardContent)(({ theme }) => ({
+  position: 'absolute',
+  bottom: 28,
+  left: 0,
+  width: '100%',
+  zIndex: 3,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  padding: '0 28px',
+  opacity: 1,
+  transition: 'opacity 0.32s, transform 0.32s',
+}));
+
+const ModernProjectTitle = styled(Typography)(({ theme }) => ({
+  color: 'white',
+  fontWeight: 700,
+  fontSize: '1.15rem',
+  letterSpacing: '0.04em',
+  textShadow: '0 2px 8px #0004',
+  display: 'flex',
+  alignItems: 'center',
+  gap: 8,
+  mb: 1,
+}));
+
+const ModernProjectDate = styled(Typography)(({ theme }) => ({
+  color: '#A239FF',
+  fontSize: '0.95rem',
+  fontWeight: 500,
+  textShadow: '0 1px 6px #A239FF22',
+  mb: 0.5,
+}));
+
+const ModernSeeAllButton = styled(Button)(({ theme }) => ({
+  background: 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)',
+  color: 'white',
+  borderRadius: '50px',
+  padding: '13px 30px',
+  textTransform: 'uppercase',
+  fontWeight: 700,
+  fontSize: '15px',
+  letterSpacing: '1.5px',
+  boxShadow: '0 6px 28px #A239FF33',
+  transition: 'background 0.28s, box-shadow 0.28s, transform 0.28s',
+  '&:hover': {
+    background: 'linear-gradient(90deg, #5BFFB3 0%, #A239FF 100%)',
+    boxShadow: '0 10px 36px #A239FF55',
+    transform: 'scale(1.045)',
+  },
+}));
+
+// Animated gradient underline for selected tab
+const AnimatedTabIndicator = styled('span')(({ theme }) => ({
+  display: 'block',
+  height: 4,
+  width: '100%',
+  borderRadius: 2,
+  background: 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)',
+  boxShadow: '0 1px 8px #A239FF33',
+  animation: 'gradientMove 2.5s linear infinite',
+  marginTop: 2,
 }));
 
 const ProjectsSection = () => {
@@ -172,6 +206,8 @@ const ProjectsSection = () => {
             mb: { xs: 4, md: 6 },
             textAlign: "center",
             fontSize: { xs: "2.5rem", md: "3.5rem" },
+            letterSpacing: '0.01em',
+            textShadow: '0 2px 16px #A239FF22',
           }}
         >
           {title}
@@ -193,6 +229,7 @@ const ProjectsSection = () => {
             scrollButtons="auto"
             allowScrollButtonsMobile
             aria-label="project categories"
+            TabIndicatorProps={{ children: <AnimatedTabIndicator /> }}
           >
             {categories.map((category) => (
               <StyledTab key={category} label={category} value={category} />
@@ -204,16 +241,13 @@ const ProjectsSection = () => {
         <Grid container spacing={4}>
           {filteredProjects.map((project) => (
             <Grid item key={project.id} xs={12} sm={6} md={4}>
-              <ProjectCard>
-                <ProjectDateTypography variant="body2">
-                  {project.date}
-                </ProjectDateTypography>
-                <CircularImage
+              <ModernProjectCard>
+                <ModernProjectImage
                   component="img"
                   image={project.image}
                   alt={project.title}
                 />
-                <ProjectOverlay className="overlay" />
+                <ModernProjectOverlay className="overlay" />
                 <CardActionArea
                   href={project.link}
                   sx={{
@@ -225,23 +259,14 @@ const ProjectsSection = () => {
                     zIndex: 3,
                   }}
                 >
-                  <ProjectContent>
-                    <Typography
-                      variant="h6"
-                      component="div"
-                      color="white"
-                      sx={{
-                        fontWeight: 500,
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 1,
-                      }}
-                    >
+                  <ModernProjectContent>
+                    <ModernProjectDate>{project.date}</ModernProjectDate>
+                    <ModernProjectTitle>
                       {project.title} <ArrowForwardIcon sx={{ fontSize: 18 }} />
-                    </Typography>
-                  </ProjectContent>
+                    </ModernProjectTitle>
+                  </ModernProjectContent>
                 </CardActionArea>
-              </ProjectCard>
+              </ModernProjectCard>
             </Grid>
           ))}
         </Grid>
@@ -254,13 +279,13 @@ const ProjectsSection = () => {
             mt: { xs: 6, md: 8 },
           }}
         >
-          <SeeAllButton
+          <ModernSeeAllButton
             variant="contained"
             endIcon={<ArrowForwardIcon />}
             href="#all-projects"
           >
             SEE ALL PROJECTS
-          </SeeAllButton>
+          </ModernSeeAllButton>
         </Box>
       </Container>
     </Box>

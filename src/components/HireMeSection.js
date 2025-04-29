@@ -18,88 +18,91 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { usePortfolio } from "../context/PortfolioContext";
 
 // Styled components
-const ServiceButton = styled(Button)(({ theme, active }) => ({
-  backgroundColor: active ? "#A239FF" : "rgba(255, 255, 255, 0.05)",
-  color: "white",
-  borderRadius: 0,
-  padding: "14px 20px",
-  textTransform: "none",
-  fontWeight: 500,
-  fontSize: "16px",
-  "&:hover": {
-    backgroundColor: active ? "#9B30FF" : "rgba(255, 255, 255, 0.1)",
-  },
-  display: "flex",
-  justifyContent: "flex-start",
-  width: "100%",
-  position: "relative",
-}));
-
-const BudgetButton = styled(Button)(({ theme, active }) => ({
-  backgroundColor: active ? "#A239FF" : "rgba(255, 255, 255, 0.05)",
-  color: "white",
-  borderRadius: 0,
-  padding: "14px 20px",
-  textTransform: "none",
-  fontWeight: 500,
-  fontSize: "16px",
-  "&:hover": {
-    backgroundColor: active ? "#9B30FF" : "rgba(255, 255, 255, 0.1)",
-  },
-  display: "flex",
-  justifyContent: "center",
-  width: "100%",
-}));
-
-const StyledTextField = styled(TextField)(({ theme }) => ({
-  "& .MuiOutlinedInput-root": {
-    color: "white",
-    backgroundColor: "rgba(255, 255, 255, 0.05)",
-    borderRadius: 0,
-    "& fieldset": {
-      border: "none",
-    },
-    "&:hover fieldset": {
-      border: "none",
-    },
-    "&.Mui-focused fieldset": {
-      border: "none",
-    },
-  },
-  "& .MuiOutlinedInput-input": {
-    padding: "16px 20px",
-  },
-  "& .MuiInputLabel-root": {
-    color: "rgba(255, 255, 255, 0.5)",
-  },
-}));
-
-const ActiveDot = styled(Box)(({ theme }) => ({
-  width: "10px",
-  height: "10px",
-  borderRadius: "50%",
-  backgroundColor: "white",
-  position: "absolute",
-  left: "8px",
-  top: "50%",
-  transform: "translateY(-50%)",
-}));
-
-const HireMeButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "#A239FF",
-  color: "white",
-  borderRadius: "50px",
-  padding: "12px 24px",
-  textTransform: "uppercase",
+const ModernOptionButton = styled(Button)(({ theme, active }) => ({
+  background: active
+    ? 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)'
+    : 'rgba(255,255,255,0.07)',
+  color: active ? 'white' : 'rgba(255,255,255,0.85)',
+  borderRadius: '16px',
+  boxShadow: active ? '0 4px 18px #A239FF33' : 'none',
+  padding: '15px 22px',
+  textTransform: 'none',
   fontWeight: 600,
-  fontSize: "14px",
-  letterSpacing: "1px",
-  boxShadow: "0 4px 20px rgba(138, 43, 226, 0.4)",
-  "&:hover": {
-    backgroundColor: "#9B30FF",
-    boxShadow: "0 6px 25px rgba(138, 43, 226, 0.6)",
+  fontSize: '16px',
+  letterSpacing: '0.01em',
+  transition: 'all 0.28s cubic-bezier(.4,2,.6,1)',
+  '&:hover': {
+    background:
+      'linear-gradient(90deg, #5BFFB3 0%, #A239FF 100%)',
+    color: 'white',
+    boxShadow: '0 8px 32px #A239FF33',
+    transform: 'scale(1.035)',
+  },
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  position: 'relative',
+}));
+
+const ModernTextField = styled(TextField)(({ theme }) => ({
+  '& .MuiOutlinedInput-root': {
+    color: 'white',
+    background: 'rgba(30,15,40,0.55)',
+    borderRadius: '14px',
+    boxShadow: '0 2px 12px #A239FF11',
+    '& fieldset': {
+      border: '1.5px solid rgba(162, 57, 255, 0.13)',
+    },
+    '&:hover fieldset': {
+      border: '1.5px solid #A239FF99',
+    },
+    '&.Mui-focused fieldset': {
+      border: '1.5px solid #A239FF',
+      boxShadow: '0 0 0 2px #A239FF33',
+    },
+  },
+  '& .MuiOutlinedInput-input': {
+    padding: '16px 20px',
+  },
+  '& .MuiInputLabel-root': {
+    color: 'rgba(255,255,255,0.5)',
   },
 }));
+
+const ModernHireMeButton = styled(Button)(({ theme }) => ({
+  background: 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)',
+  color: 'white',
+  borderRadius: '50px',
+  padding: '15px 36px',
+  textTransform: 'uppercase',
+  fontWeight: 700,
+  fontSize: '15px',
+  letterSpacing: '1.5px',
+  boxShadow: '0 6px 28px #A239FF33',
+  transition: 'background 0.28s, box-shadow 0.28s, transform 0.28s',
+  '&:hover': {
+    background: 'linear-gradient(90deg, #5BFFB3 0%, #A239FF 100%)',
+    boxShadow: '0 10px 36px #A239FF55',
+    transform: 'scale(1.045)',
+  },
+}));
+
+const FadeInForm = styled(Box)(({ theme }) => ({
+  opacity: 0,
+  animation: 'fadeInHireMe 1.2s cubic-bezier(.4,2,.6,1) 0.2s forwards',
+}));
+
+const styleSheet = document.createElement('style');
+styleSheet.innerText = `
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes fadeInHireMe {
+  0% { opacity: 0; transform: translateY(36px); }
+  100% { opacity: 1; transform: translateY(0); }
+}`;
+document.head.appendChild(styleSheet);
 
 const HireMeSection = () => {
   const portfolioData = usePortfolio();
@@ -139,7 +142,7 @@ const HireMeSection = () => {
       sx={{
         py: { xs: 8, md: 12 },
         background:
-          "linear-gradient(to right, rgba(0,0,0,0.9), rgba(138, 43, 226, 0.2))",
+          'linear-gradient(120deg, rgba(0,0,0,0.92) 0%, rgba(162,57,255,0.18) 100%)',
       }}
     >
       <Container maxWidth="lg">
@@ -147,14 +150,16 @@ const HireMeSection = () => {
           variant="h2"
           component="h2"
           sx={{
-            fontWeight: "bold",
+            fontWeight: 'bold',
             mb: { xs: 6, md: 8 },
-            fontSize: { xs: "2.5rem", md: "4rem" },
+            fontSize: { xs: '2.5rem', md: '4rem' },
+            letterSpacing: '0.01em',
+            textShadow: '0 2px 16px #A239FF22',
           }}
         >
           {title}
         </Typography>
-
+        <FadeInForm>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={4}>
             {/* Services Section */}
@@ -162,25 +167,24 @@ const HireMeSection = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  fontWeight: "bold",
+                  fontWeight: 700,
                   mb: 2,
-                  fontSize: "1.125rem",
+                  fontSize: '1.125rem',
+                  letterSpacing: '0.01em',
+                  color: '#fff',
                 }}
               >
                 Services
               </Typography>
               <Grid container spacing={2}>
                 {services.map((service) => (
-                  <Grid item xs={12} md={6} lg={2.4} key={service}>
-                    <ServiceButton
+                  <Grid item xs={12} sm={6} md={2.4} key={service}>
+                    <ModernOptionButton
                       active={selectedService === service}
                       onClick={() => handleServiceChange(service)}
                     >
-                      {/* {selectedService === service && <ActiveDot />} */}
-                      <Box sx={{ pl: selectedService === service ? 2 : 0 }}>
-                        {service}
-                      </Box>
-                    </ServiceButton>
+                      {service}
+                    </ModernOptionButton>
                   </Grid>
                 ))}
               </Grid>
@@ -191,9 +195,11 @@ const HireMeSection = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  fontWeight: "bold",
+                  fontWeight: 700,
                   mb: 2,
-                  fontSize: "1.125rem",
+                  fontSize: '1.125rem',
+                  letterSpacing: '0.01em',
+                  color: '#fff',
                 }}
               >
                 Budget in USD
@@ -201,12 +207,12 @@ const HireMeSection = () => {
               <Grid container spacing={2}>
                 {budgets.map((budget) => (
                   <Grid item xs={6} md={3} key={budget}>
-                    <BudgetButton
+                    <ModernOptionButton
                       active={selectedBudget === budget}
                       onClick={() => handleBudgetChange(budget)}
                     >
                       {budget}
-                    </BudgetButton>
+                    </ModernOptionButton>
                   </Grid>
                 ))}
               </Grid>
@@ -217,16 +223,18 @@ const HireMeSection = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  fontWeight: "bold",
+                  fontWeight: 700,
                   mb: 2,
-                  fontSize: "1.125rem",
+                  fontSize: '1.125rem',
+                  letterSpacing: '0.01em',
+                  color: '#fff',
                 }}
               >
                 Personal Data
               </Typography>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={4}>
-                  <StyledTextField
+                  <ModernTextField
                     fullWidth
                     placeholder="First Name"
                     variant="outlined"
@@ -234,7 +242,7 @@ const HireMeSection = () => {
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <StyledTextField
+                  <ModernTextField
                     fullWidth
                     placeholder="Last Name"
                     variant="outlined"
@@ -242,7 +250,7 @@ const HireMeSection = () => {
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <StyledTextField
+                  <ModernTextField
                     fullWidth
                     placeholder="Email"
                     variant="outlined"
@@ -251,7 +259,7 @@ const HireMeSection = () => {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <StyledTextField
+                  <ModernTextField
                     fullWidth
                     placeholder="Project Details (Optional)"
                     variant="outlined"
@@ -263,7 +271,7 @@ const HireMeSection = () => {
                           <IconButton
                             aria-label="attach file"
                             edge="end"
-                            sx={{ color: "rgba(255, 255, 255, 0.5)" }}
+                            sx={{ color: 'rgba(255, 255, 255, 0.5)' }}
                           >
                             <AttachFileIcon />
                           </IconButton>
@@ -283,18 +291,18 @@ const HireMeSection = () => {
                     checked={agreedToTerms}
                     onChange={handleTermsChange}
                     sx={{
-                      color: "#A239FF",
-                      "&.Mui-checked": {
-                        color: "#A239FF",
+                      color: '#A239FF',
+                      '&.Mui-checked': {
+                        color: '#A239FF',
                       },
                     }}
                   />
                 }
                 label={termsText}
                 sx={{
-                  "& .MuiFormControlLabel-label": {
-                    fontSize: "0.875rem",
-                    color: "rgba(255, 255, 255, 0.7)",
+                  '& .MuiFormControlLabel-label': {
+                    fontSize: '0.95rem',
+                    color: 'rgba(255, 255, 255, 0.8)',
                   },
                 }}
               />
@@ -302,16 +310,17 @@ const HireMeSection = () => {
 
             {/* Submit Button */}
             <Grid item xs={12} sx={{ mt: 2 }}>
-              <HireMeButton
+              <ModernHireMeButton
                 type="submit"
                 endIcon={<ArrowForwardIcon />}
                 disabled={!agreedToTerms}
               >
                 Hire Me
-              </HireMeButton>
+              </ModernHireMeButton>
             </Grid>
           </Grid>
         </form>
+        </FadeInForm>
       </Container>
     </Box>
   );

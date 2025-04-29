@@ -35,21 +35,117 @@ const StatsLabel = styled(Typography)(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-const HireMeButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "#A239FF",
-  color: "white",
-  borderRadius: "50px",
-  padding: "12px 24px",
-  textTransform: "uppercase",
-  fontWeight: 600,
-  fontSize: "14px",
-  letterSpacing: "1px",
-  boxShadow: "0 4px 20px rgba(138, 43, 226, 0.4)",
-  "&:hover": {
-    backgroundColor: "#9B30FF",
-    boxShadow: "0 6px 25px rgba(138, 43, 226, 0.6)",
+const GlassyContentCard = styled(Box)(({ theme }) => ({
+  background: 'rgba(30,15,40,0.45)',
+  borderRadius: '2.5rem',
+  boxShadow: '0 8px 32px 0 rgba(162,57,255,0.13)',
+  backdropFilter: 'blur(12px)',
+  padding: theme.spacing(5, 4, 5, 4),
+  position: 'relative',
+  zIndex: 1,
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(3, 2, 3, 2),
   },
 }));
+
+const AnimatedStatsValue = styled(StatsValue)(({ theme }) => ({
+  background: 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  textShadow: '0 2px 16px #A239FF33',
+  animation: 'fadeInUpStats 1.2s cubic-bezier(.4,2,.6,1)',
+}));
+
+const ModernHireMeButton = styled(Button)(({ theme }) => ({
+  background: 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)',
+  color: 'white',
+  borderRadius: '50px',
+  padding: '15px 36px',
+  textTransform: 'uppercase',
+  fontWeight: 700,
+  fontSize: '15px',
+  letterSpacing: '1.5px',
+  boxShadow: '0 6px 28px #A239FF33',
+  transition: 'background 0.28s, box-shadow 0.28s, transform 0.28s',
+  '&:hover': {
+    background: 'linear-gradient(90deg, #5BFFB3 0%, #A239FF 100%)',
+    boxShadow: '0 10px 36px #A239FF55',
+    transform: 'scale(1.045)',
+  },
+}));
+
+const AnimatedTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: 800,
+  fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+  color: 'white',
+  letterSpacing: '0.01em',
+  textShadow: '0 2px 16px #A239FF22',
+  position: 'relative',
+  zIndex: 2,
+  display: 'inline-block',
+  '&::after': {
+    content: '""',
+    display: 'block',
+    width: '60%',
+    height: '4px',
+    margin: '18px auto 0',
+    borderRadius: '2px',
+    background: 'linear-gradient(90deg, #A239FF 0%, #5BFFB3 100%)',
+    animation: 'gradientMove 3s linear infinite alternate',
+  },
+}));
+
+const AnimatedArrow = styled(ArrowDownwardIcon)(({ theme }) => ({
+  color: '#A239FF',
+  fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+  ml: 2,
+  animation: 'arrowBounce 1.8s infinite',
+}));
+
+const ModernProfileCircle = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  width: 'min(420px, 90vw)',
+  height: 'min(420px, 90vw)',
+  margin: '0 auto',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  zIndex: 1,
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: '-3%',
+    left: '-3%',
+    width: '106%',
+    height: '106%',
+    borderRadius: '50%',
+    background: 'linear-gradient(120deg, #A239FF55 0%, #5BFFB366 100%)',
+    filter: 'blur(16px)',
+    zIndex: 0,
+    animation: 'pulseGlow 3.2s infinite alternate',
+  },
+}));
+
+// Keyframes for animations
+const styleSheet = document.createElement('style');
+styleSheet.innerText = `
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes fadeInUpStats {
+  0% { opacity: 0; transform: translateY(32px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+@keyframes pulseGlow {
+  0% { opacity: 0.7; filter: blur(16px); }
+  100% { opacity: 1; filter: blur(24px); }
+}`;
+document.head.appendChild(styleSheet);
 
 const AboutMeSection = () => {
   const theme = useTheme();
@@ -92,118 +188,67 @@ const AboutMeSection = () => {
         <Grid container spacing={8} alignItems="center">
           {/* Left side - Image */}
           <Grid item xs={12} md={6}>
-            <Box
-              sx={{
-                position: "relative",
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  top: "5%",
-                  left: "5%",
-                  width: "90%",
-                  height: "90%",
-                  border: "1px solid #A239FF",
-                  borderRadius: "50%",
-                  zIndex: 0,
-                  animation: "pulse 3s infinite",
-                },
-                "@keyframes pulse": {
-                  "0%": {
-                    transform: "scale(1)",
-                    opacity: 0.3,
-                  },
-                  "50%": {
-                    transform: "scale(1.05)",
-                    opacity: 0.5,
-                  },
-                  "100%": {
-                    transform: "scale(1)",
-                    opacity: 0.3,
-                  },
-                },
-              }}
-            >
+            <ModernProfileCircle>
               <Box
                 component="img"
                 src={aboutImage}
                 alt="Developer Workspace"
                 sx={{
-                  width: "100%",
-                  height: "auto",
-                  borderRadius: "50%",
-                  position: "relative",
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '50%',
+                  position: 'relative',
                   zIndex: 1,
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5)",
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
                 }}
               />
-            </Box>
+            </ModernProfileCircle>
           </Grid>
 
           {/* Right side - Content */}
           <Grid item xs={12} md={6}>
-            <Box>
+            <GlassyContentCard>
               {/* Section title with arrow */}
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mb: 4,
-                }}
-              >
-                <Typography
-                  variant="h2"
-                  component="h2"
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: { xs: "2.5rem", md: "4rem" },
-                    color: "white",
-                  }}
-                >
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, justifyContent: 'flex-start' }}>
+                <AnimatedTitle variant="h2" component="h2">
                   {title}
-                </Typography>
-                <ArrowDownwardIcon
-                  sx={{
-                    color: "#A239FF",
-                    fontSize: { xs: "2.5rem", md: "4rem" },
-                    ml: 2,
-                  }}
-                />
+                </AnimatedTitle>
+                <AnimatedArrow />
               </Box>
-
               {/* Description */}
               <Typography
                 variant="body1"
                 sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
+                  color: 'rgba(255, 255, 255, 0.78)',
                   mb: 4,
-                  fontSize: "1rem",
+                  fontSize: '1.07rem',
                   lineHeight: 1.7,
+                  fontWeight: 400,
+                  textShadow: '0 1px 8px #A239FF11',
                 }}
               >
                 {description}
               </Typography>
-
               {/* Stats */}
               <Grid container spacing={4} sx={{ mb: 5 }}>
                 {stats.map((stat, index) => (
                   <Grid item xs={6} key={index}>
-                    <StatsValue variant="h3">
+                    <AnimatedStatsValue variant="h3">
                       {formatValue(stat.value)}
-                    </StatsValue>
+                    </AnimatedStatsValue>
                     <StatsLabel variant="body2">{stat.label}</StatsLabel>
                   </Grid>
                 ))}
               </Grid>
-
               {/* Hire me button */}
-              <HireMeButton
+              <ModernHireMeButton
                 endIcon={<ArrowForwardIcon />}
                 component="a"
                 href={hireMeButtonLink}
               >
                 {hireMeButtonText}
-              </HireMeButton>
-            </Box>
+              </ModernHireMeButton>
+            </GlassyContentCard>
           </Grid>
         </Grid>
       </Container>
