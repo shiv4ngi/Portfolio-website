@@ -1,0 +1,191 @@
+{
+  "header": {
+    "logo": "Mone",
+    "navItems": [
+      { "name": "LET'S TALK", "path": "#contact" },
+      { "name": "MENU", "path": "#menu" }
+    ]
+  },
+  "hero": {
+    "name": "Shivangi Srivastava"
+  },
+  "profile": {
+    "biography": "Hello! I'm Shivangi, a Software developer and Front-end Specialist with a penchant for creating code that's both ✨stylish and functional✨",
+    "skills": "Web Development • UI & UX Design • Marketing • SEO • Management",
+    "social": [
+      { "platform": "facebook", "url": "https://facebook.com" },
+      { "platform": "twitter", "url": "https://twitter.com" },
+      { "platform": "instagram", "url": "https://instagram.com" }
+    ],
+    "image": "https://via.placeholder.com/300",
+    "stats": [
+      { "value": "432", "label": "PROJECTS DONE" },
+      { "value": "3.5+", "label": "YEARS OF EXPERIENCE" },
+      { "value": "900", "label": "WORLDWIDE CLIENTS" }
+    ]
+  },
+  "about": {
+    "title": "About me",
+    "description": "Description of the developer's biography and sit amet consectetur. Mattis in dui euismod sit egestas ac sit. Mollis eu urna pulvinar mi felis consectetur. Dapibus vivamus ornare feugiat vitae arcu.",
+    "image": "./asset/images/logo.png",
+    "stats": [
+      { "value": "310+", "label": "Project Complete" },
+      { "value": "10+", "label": "Years Experience" }
+    ],
+    "hireMeButtonText": "HIRE ME",
+    "hireMeButtonLink": "#hire-me"
+  },
+  "services": {
+    "title": "What I Do",
+    "items": [
+      {
+        "number": "01/",
+        "title": "Design",
+        "icon": "design",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
+      },
+      {
+        "number": "02/",
+        "title": "Development",
+        "icon": "code",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et"
+      },
+      {
+        "number": "03/",
+        "title": "Marketing",
+        "icon": "campaign",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+      }
+    ]
+  },
+  "skills": {
+    "title": "My skills",
+    "items": [
+      {
+        "name": "CSS",
+        "icon": "css",
+        "level": 7
+      },
+      {
+        "name": "Tailwind",
+        "icon": "tailwind",
+        "level": 6
+      },
+      {
+        "name": "Javascript",
+        "icon": "javascript",
+        "level": 7
+      },
+      {
+        "name": "Angular",
+        "icon": "angular",
+        "level": 6
+      },
+      {
+        "name": "Laravel",
+        "icon": "laravel",
+        "level": 5
+      },
+      {
+        "name": "React",
+        "icon": "react",
+        "level": 10
+      },
+      {
+        "name": "Ruby/Rails",
+        "icon": "ruby",
+        "level": 9
+      },
+      {
+        "name": "Node.js",
+        "icon": "node",
+        "level": 5
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "categories": [
+      "iOS Development",
+      "Website Development",
+      "Android Development",
+      "Backend Development",
+      "Webflow Development"
+    ],
+    "activeCategory": "Website Development",
+    "items": [
+      {
+        "id": 1,
+        "title": "Project Name",
+        "category": "Website Development",
+        "date": "May 2024",
+        "image": "https://via.placeholder.com/400?text=Project1",
+        "link": "#project1"
+      },
+      {
+        "id": 2,
+        "title": "Project Name",
+        "category": "Android Development",
+        "date": "March 2024",
+        "image": "https://via.placeholder.com/400?text=Project2",
+        "link": "#project2"
+      },
+      {
+        "id": 3,
+        "title": "Project Name",
+        "category": "Webflow Development",
+        "date": "Jan 2024",
+        "image": "https://via.placeholder.com/400?text=Project3",
+        "link": "#project3"
+      },
+      {
+        "id": 4,
+        "title": "Project Name",
+        "category": "iOS Development",
+        "date": "Sep 2023",
+        "image": "https://via.placeholder.com/400?text=Project4",
+        "link": "#project4"
+      },
+      {
+        "id": 5,
+        "title": "Project Name",
+        "category": "Android Development",
+        "date": "Sep 2023",
+        "image": "https://via.placeholder.com/400?text=Project5",
+        "link": "#project5"
+      },
+      {
+        "id": 6,
+        "title": "Project Name",
+        "category": "Backend Development",
+        "date": "Aug 2023",
+        "image": "https://via.placeholder.com/400?text=Project6",
+        "link": "#project6"
+      }
+    ]
+  },
+  "hire": {
+    "title": "Hire Me",
+    "services": [
+      "Website Development",
+      "iOS Development",
+      "Android Development",
+      "Backend Development",
+      "Webflow Development"
+    ],
+    "budgets": ["Up to 2K", "2K-5K", "5K-10K", "More than 10K"],
+    "activeService": "Website Development",
+    "activeBudget": "2K-5K",
+    "termsText": "I agree to the processing of my data in accordance with the Privacy Policy"
+  },
+  "contact": {
+    "title": "Follow me",
+    "image": "https://via.placeholder.com/400?text=Profile",
+    "social": [
+      { "platform": "twitter", "url": "https://twitter.com" },
+      { "platform": "facebook", "url": "https://facebook.com" },
+      { "platform": "behance", "url": "https://behance.com" },
+      { "platform": "discord", "url": "https://discord.com" }
+    ]
+  }
+}
