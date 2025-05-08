@@ -19,9 +19,9 @@
     ],
     "image": "https://via.placeholder.com/300",
     "stats": [
-      { "value": "432", "label": "PROJECTS DONE" },
+      { "value": "43", "label": "PROJECTS DONE" },
       { "value": "3.5+", "label": "YEARS OF EXPERIENCE" },
-      { "value": "900", "label": "WORLDWIDE CLIENTS" }
+      { "value": "20", "label": "WORLDWIDE CLIENTS" }
     ]
   },
   "about": {
@@ -29,8 +29,8 @@
     "description": "Description of the developer's biography and sit amet consectetur. Mattis in dui euismod sit egestas ac sit. Mollis eu urna pulvinar mi felis consectetur. Dapibus vivamus ornare feugiat vitae arcu.",
     "image": "./asset/images/logo.png",
     "stats": [
-      { "value": "310+", "label": "Project Complete" },
-      { "value": "10+", "label": "Years Experience" }
+      { "value": "40+", "label": "Project Complete" },
+      { "value": "3.5+", "label": "Years Experience" }
     ],
     "hireMeButtonText": "HIRE ME",
     "hireMeButtonLink": "#hire-me"
