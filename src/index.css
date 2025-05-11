@@ -38,3 +38,28 @@ a {
     url("https://grainy-gradients.vercel.app/noise.svg");
   min-height: 100vh;
 }
+
+@media (min-width: 768px) {
+  .scroll-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh; /* The container height should be full viewport */
+  }
+
+  .scroll-section {
+    scroll-snap-align: start;
+    height: 100vh; /* Each section will take up the full viewport */
+  }
+}
+
+/* For smaller screens, don't apply scroll snapping */
+@media (max-width: 767px) {
+  .scroll-container {
+    height: auto; /* Normal scrolling for mobile */
+    overflow-y: auto;
+  }
+
+  .scroll-section {
+    height: auto; /* Allow sections to adjust based on content */
+  }
+}

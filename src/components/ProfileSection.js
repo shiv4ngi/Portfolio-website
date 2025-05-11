@@ -100,7 +100,7 @@ const ProfileSection = () => {
             >
               CONNECT
             </Typography>
-            <SocialIcons />
+            {/* <SocialIcons /> */}
           </Box>
         </Grid>
 

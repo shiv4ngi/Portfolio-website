@@ -10,27 +10,26 @@
     "name": "Shivangi Srivastava"
   },
   "profile": {
-    "biography": "Hello! I'm Shivangi, a Software developer and Front-end Specialist with a penchant for creating code that's both ✨stylish and functional✨",
-    "skills": "Web Development • UI & UX Design • Marketing • SEO • Management",
+    "biography": "Hello! I'm Shivangi, a Software Developer and Front-end Specialist with over 3 years of experience creating ✨stylish and functional✨ user interfaces using React.js, Material UI, and modern web technologies.",
+    "skills": "Web Development • UI & UX Design • REST APIs • Mobile Development • SEO",
     "social": [
-      { "platform": "facebook", "url": "https://facebook.com" },
-      { "platform": "twitter", "url": "https://twitter.com" },
-      { "platform": "instagram", "url": "https://instagram.com" }
+      { "platform": "linkedin", "url": "https://www.linkedin.com/in/shiv4ngi" },
+      { "platform": "github", "url": "https://github.com/shiv4ngi/shiv4ngi" }
     ],
-    "image": "https://via.placeholder.com/300",
+    "image": "./asset/images/profile_black.jpeg",
     "stats": [
-      { "value": "43", "label": "PROJECTS DONE" },
-      { "value": "3.5+", "label": "YEARS OF EXPERIENCE" },
+      { "value": "29", "label": "PROJECTS DONE" },
+      { "value": "3.8+", "label": "YEARS OF EXPERIENCE" },
       { "value": "20", "label": "WORLDWIDE CLIENTS" }
     ]
   },
   "about": {
     "title": "About me",
-    "description": "Description of the developer's biography and sit amet consectetur. Mattis in dui euismod sit egestas ac sit. Mollis eu urna pulvinar mi felis consectetur. Dapibus vivamus ornare feugiat vitae arcu.",
+    "description": "I'm an experienced software developer with a strong focus on front-end technologies like React.js, Material UI, and SCSS. I've led multiple impactful projects such as the Har Ghar Tiranga portal and G20 Summit interfaces. I'm passionate about blending design with functionality and creating intuitive, dynamic applications for government and consumer audiences alike.",
     "image": "./asset/images/logo.png",
     "stats": [
-      { "value": "40+", "label": "Project Complete" },
-      { "value": "3.5+", "label": "Years Experience" }
+      { "value": "25+", "label": "Project Complete" },
+      { "value": "3.8+", "label": "Years Experience" }
     ],
     "hireMeButtonText": "HIRE ME",
     "hireMeButtonLink": "#hire-me"
@@ -40,127 +39,92 @@
     "items": [
       {
         "number": "01/",
-        "title": "Design",
+        "title": "UI/UX Design",
         "icon": "design",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
+        "description": "Craft responsive, animated, and intuitive user interfaces using tools like Figma, Material UI, and SCSS."
       },
       {
         "number": "02/",
-        "title": "Development",
+        "title": "Frontend Development",
         "icon": "code",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et"
+        "description": "Build scalable and high-performance web apps with React.js, Redux, and RESTful APIs."
       },
       {
         "number": "03/",
-        "title": "Marketing",
+        "title": "Mobile Development",
         "icon": "campaign",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+        "description": "Develop cross-platform mobile apps with React Native, integrating AI-powered features and intuitive UX."
       }
     ]
   },
   "skills": {
     "title": "My skills",
     "items": [
-      {
-        "name": "CSS",
-        "icon": "css",
-        "level": 7
-      },
-      {
-        "name": "Tailwind",
-        "icon": "tailwind",
-        "level": 6
-      },
-      {
-        "name": "Javascript",
-        "icon": "javascript",
-        "level": 7
-      },
-      {
-        "name": "Angular",
-        "icon": "angular",
-        "level": 6
-      },
-      {
-        "name": "Laravel",
-        "icon": "laravel",
-        "level": 5
-      },
-      {
-        "name": "React",
-        "icon": "react",
-        "level": 10
-      },
-      {
-        "name": "Ruby/Rails",
-        "icon": "ruby",
-        "level": 9
-      },
-      {
-        "name": "Node.js",
-        "icon": "node",
-        "level": 5
-      }
+      { "name": "React js", "icon": "react", "level": 9 },
+      { "name": "CSS", "icon": "css", "level": 9 },
+      { "name": "Material UI", "icon": "material-ui", "level": 9 },
+      { "name": "Bootstrap", "icon": "bootstrap", "level": 9 },
+      { "name": "Javascript", "icon": "javascript", "level": 8 },
+      { "name": "Node.js", "icon": "node", "level": 6 }
     ]
   },
+
   "projects": {
     "title": "My Projects",
     "categories": [
-      "iOS Development",
       "Website Development",
       "Android Development",
-      "Backend Development",
-      "Webflow Development"
+      "iOS Development"
     ],
     "activeCategory": "Website Development",
     "items": [
       {
         "id": 1,
-        "title": "Project Name",
+        "title": "Har Ghar Tiranga",
         "category": "Website Development",
-        "date": "May 2024",
-        "image": "https://via.placeholder.com/400?text=Project1",
-        "link": "#project1"
+        "date": "Aug 2022",
+        "image": "https://via.placeholder.com/400?text=HarGharTiranga",
+        "link": "https://harghartiranga.com/"
       },
       {
         "id": 2,
-        "title": "Project Name",
-        "category": "Android Development",
-        "date": "March 2024",
-        "image": "https://via.placeholder.com/400?text=Project2",
-        "link": "#project2"
+        "title": "Ask Gita – G20 Summit",
+        "category": "Website Development",
+        "date": "Sep 2023",
+        "image": "https://via.placeholder.com/400?text=AskGita",
+        "link": "https://digitaltribute.in/"
       },
       {
         "id": 3,
-        "title": "Project Name",
-        "category": "Webflow Development",
-        "date": "Jan 2024",
-        "image": "https://via.placeholder.com/400?text=Project3",
-        "link": "#project3"
+        "title": "Stylin – iOS Fashion App",
+        "category": "iOS Development",
+        "date": "Jul 2023",
+        "image": "https://via.placeholder.com/400?text=StylinApp",
+        "link": "#stylin"
       },
       {
         "id": 4,
-        "title": "Project Name",
-        "category": "iOS Development",
-        "date": "Sep 2023",
-        "image": "https://via.placeholder.com/400?text=Project4",
-        "link": "#project4"
+        "title": "Viksit Bharat Strategy Room",
+        "category": "Website Development",
+        "date": "Apr 2023",
+        "image": "https://via.placeholder.com/400?text=ViksitBharat",
+        "link": "https://viksitbharatsankalp.gov.in/"
       },
       {
         "id": 5,
-        "title": "Project Name",
-        "category": "Android Development",
-        "date": "Sep 2023",
-        "image": "https://via.placeholder.com/400?text=Project5",
-        "link": "#project5"
+        "title": "Pradhanmantri Sangrahalaya",
+        "category": "Website Development",
+        "date": "Mar 2023",
+        "image": "https://via.placeholder.com/400?text=PMMuseum",
+        "link": "#pm-museum"
       },
       {
         "id": 6,
-        "title": "Project Name",
-        "category": "Backend Development",
-        "date": "Aug 2023",
-        "image": "https://via.placeholder.com/400?text=Project6",
-        "link": "#project6"
+        "title": "Meri Maati Mera Desh",
+        "category": "Website Development",
+        "date": "2023",
+        "image": "https://via.placeholder.com/400?text=MeriMaati",
+        "link": "https://merimaatimeradesh.gov.in/"
       }
     ]
   },
@@ -169,9 +133,7 @@
     "services": [
       "Website Development",
       "iOS Development",
-      "Android Development",
-      "Backend Development",
-      "Webflow Development"
+      "Android Development"
     ],
     "budgets": ["Up to 2K", "2K-5K", "5K-10K", "More than 10K"],
     "activeService": "Website Development",
@@ -182,9 +144,9 @@
     "title": "Follow me",
     "image": "https://via.placeholder.com/400?text=Profile",
     "social": [
-      { "platform": "twitter", "url": "https://twitter.com" },
+      { "platform": "linkedin", "url": "https://www.linkedin.com/in/shiv4ngi" },
+      { "platform": "github", "url": "https://github.com/shiv4ngi/shiv4ngi" },
       { "platform": "facebook", "url": "https://facebook.com" },
-      { "platform": "behance", "url": "https://behance.com" },
       { "platform": "discord", "url": "https://discord.com" }
     ]
   }

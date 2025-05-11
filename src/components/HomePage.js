@@ -13,15 +13,17 @@ import FollowMeSection from "./FollowMeSection";
 const HomePage = () => {
   return (
     <Box sx={{ minHeight: "100vh" }}>
-      <HeroSection />
-      <ProfileSection />
-      <MarqueeStrip />
+      <div>
+        <HeroSection />
+        <ProfileSection />
+        <MarqueeStrip />
+      </div>
       <AboutMeSection />
       <ServicesSection />
       <SkillsSection />
       <ProjectsSection />
       <HireMeSection />
-      <FollowMeSection />
+      {/* <FollowMeSection /> */}
     </Box>
   );
 };

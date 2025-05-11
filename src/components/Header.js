@@ -61,7 +61,7 @@ const Header = () => {
       elevation={0}
       sx={{ backgroundColor: "transparent", pt: 2 }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+      {/* <Toolbar sx={{ justifyContent: "space-between" }}>
         <img src={Logo} alt="logo" style={{ width: "auto", height: "70px" }} />
 
         {isMobile ? (
@@ -117,7 +117,7 @@ const Header = () => {
             ))}
           </Box>
         )}
-      </Toolbar>
+      </Toolbar> */}
     </AppBar>
   );
 };
