@@ -83,48 +83,60 @@
         "title": "Har Ghar Tiranga",
         "category": "Website Development",
         "date": "Aug 2022",
-        "image": "https://via.placeholder.com/400?text=HarGharTiranga",
-        "link": "https://harghartiranga.com/"
+        "image": "./asset/images/project/hgt.webp",
+        "link": "https://harghartiranga.com/",
+        "description": "A national initiative portal for the Indian flag hoisting campaign, featuring interactive maps and user participation.",
+        "technologies": ["React", "Material UI", "Redux", "Node.js"]
       },
       {
         "id": 2,
-        "title": "Ask Gita – G20 Summit",
+        "title": "Digital Tribute",
         "category": "Website Development",
         "date": "Sep 2023",
-        "image": "https://via.placeholder.com/400?text=AskGita",
-        "link": "https://digitaltribute.in/"
+        "image": "./asset/images/project/digitaltribute.webp",
+        "link": "https://digitaltribute.in/",
+        "description": "An interactive platform showcasing India's cultural heritage and historical significance.",
+        "technologies": ["React", "Three.js", "GSAP"]
       },
       {
         "id": 3,
-        "title": "Stylin – iOS Fashion App",
-        "category": "iOS Development",
+        "title": "Swachh Bharat",
+        "category": "Website Development",
         "date": "Jul 2023",
-        "image": "https://via.placeholder.com/400?text=StylinApp",
-        "link": "#stylin"
+        "image": "./asset/images/project/pvb.webp",
+        "link": "#swachh-bharat",
+        "description": "Portal for the national cleanliness campaign with real-time progress tracking and community engagement.",
+        "technologies": ["React", "Chart.js", "Firebase"]
       },
       {
         "id": 4,
-        "title": "Viksit Bharat Strategy Room",
+        "title": "RaastraGaan",
         "category": "Website Development",
         "date": "Apr 2023",
-        "image": "https://via.placeholder.com/400?text=ViksitBharat",
-        "link": "https://viksitbharatsankalp.gov.in/"
+        "image": "./asset/images/project/pb.webp",
+        "link": "#raastragaan",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
+        "technologies": ["React", "Web Audio API", "Redux", "Express"]
       },
       {
         "id": 5,
         "title": "Pradhanmantri Sangrahalaya",
         "category": "Website Development",
         "date": "Mar 2023",
-        "image": "https://via.placeholder.com/400?text=PMMuseum",
-        "link": "#pm-museum"
+        "image": "./asset/images/project/pmmuseum.webp",
+        "link": "#pm-museum",
+        "description": "Digital platform for the Prime Ministers' Museum with virtual tours and interactive exhibits.",
+        "technologies": ["React", "Material UI", "Framer Motion"]
       },
       {
         "id": 6,
         "title": "Meri Maati Mera Desh",
         "category": "Website Development",
         "date": "2023",
-        "image": "https://via.placeholder.com/400?text=MeriMaati",
-        "link": "https://merimaatimeradesh.gov.in/"
+        "image": "./asset/images/project/warmuseum.webp",
+        "link": "https://merimaatimeradesh.gov.in/",
+        "description": "Campaign portal honoring martyrs and connecting citizens with their heritage through interactive features.",
+        "technologies": ["React", "Redux", "Material UI", "Node.js"]
       }
     ]
   },
