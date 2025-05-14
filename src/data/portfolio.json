@@ -71,11 +71,7 @@
 
   "projects": {
     "title": "My Projects",
-    "categories": [
-      "Website Development",
-      "Android Development",
-      "iOS Development"
-    ],
+    "categories": ["Website Development", "Mobile Apps", "Kiosk Apps"],
     "activeCategory": "Website Development",
     "items": [
       {
@@ -103,25 +99,25 @@
         "title": "Swachh Bharat",
         "category": "Website Development",
         "date": "Jul 2023",
-        "image": "./asset/images/project/pvb.webp",
-        "link": "#swachh-bharat",
+        "image": "./asset/images/project/sba.webp",
+        "link": "https://swachhatahiseva.gov.in/",
         "description": "Portal for the national cleanliness campaign with real-time progress tracking and community engagement.",
         "technologies": ["React", "Chart.js", "Firebase"]
       },
       {
         "id": 4,
-        "title": "RaastraGaan",
+        "title": "Rashtragaan",
         "category": "Website Development",
         "date": "Apr 2023",
-        "image": "./asset/images/project/pb.webp",
-        "link": "#raastragaan",
+        "image": "./asset/images/project/raashtragaan.webp",
+        "link": "https://rashtragaan.in/",
         "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
         "technologies": ["React", "Web Audio API", "Redux", "Express"]
       },
       {
         "id": 5,
         "title": "Pradhanmantri Sangrahalaya",
-        "category": "Website Development",
+        "category": "Kiosk Apps",
         "date": "Mar 2023",
         "image": "./asset/images/project/pmmuseum.webp",
         "link": "#pm-museum",
@@ -130,10 +126,50 @@
       },
       {
         "id": 6,
-        "title": "Meri Maati Mera Desh",
-        "category": "Website Development",
+        "title": "Ruins To Resilience",
+        "category": "Mobile Apps",
         "date": "2023",
-        "image": "./asset/images/project/warmuseum.webp",
+        "image": "./asset/images/project/mmmd.webp",
+        "link": "https://merimaatimeradesh.gov.in/",
+        "description": "Campaign portal honoring martyrs and connecting citizens with their heritage through interactive features.",
+        "technologies": ["React", "Redux", "Material UI", "Node.js"]
+      },
+      {
+        "id": 7,
+        "title": "Stylin",
+        "category": "Mobile Apps",
+        "date": "Jul 2023",
+        "image": "./asset/images/project/sba.webp",
+        "link": "https://swachhatahiseva.gov.in/",
+        "description": "Portal for the national cleanliness campaign with real-time progress tracking and community engagement.",
+        "technologies": ["React", "Chart.js", "Firebase"]
+      },
+      {
+        "id": 8,
+        "title": "Inara",
+        "category": "Mobile Apps",
+        "date": "Apr 2023",
+        "image": "./asset/images/project/raashtragaan.webp",
+        "link": "https://www.inaraskinapp.com/",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
+        "technologies": ["React", "Web Audio API", "Redux", "Express"]
+      },
+      {
+        "id": 9,
+        "title": "Pravasi Bharatiya G20 Summit",
+        "category": "Kiosk Apps",
+        "date": "Mar 2023",
+        "image": "./asset/images/project/pmmuseum.webp",
+        "link": "#pm-museum",
+        "description": "Digital platform for the Prime Ministers' Museum with virtual tours and interactive exhibits.",
+        "technologies": ["React", "Material UI", "Framer Motion"]
+      },
+      {
+        "id": 10,
+        "title": "National Academy Of Customs, Indirect Taxes And Narcotics",
+        "category": "Kiosk Apps",
+        "date": "2023",
+        "image": "./asset/images/project/mmmd.webp",
         "link": "https://merimaatimeradesh.gov.in/",
         "description": "Campaign portal honoring martyrs and connecting citizens with their heritage through interactive features.",
         "technologies": ["React", "Redux", "Material UI", "Node.js"]
