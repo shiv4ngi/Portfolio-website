@@ -71,13 +71,19 @@
 
   "projects": {
     "title": "My Projects",
-    "categories": ["Website Development", "Mobile Apps", "Kiosk Apps"],
-    "activeCategory": "Website Development",
+    "categories": [
+      "Web Platforms",
+      "Mobile Apps",
+      "Museum & Kiosk",
+      "Government Initiatives",
+      "AI Experiences"
+    ],
+    "activeCategory": "Government Initiatives",
     "items": [
       {
         "id": 1,
         "title": "Har Ghar Tiranga",
-        "category": "Website Development",
+        "category": "Government Initiatives",
         "date": "Aug 2022",
         "image": "./asset/images/project/hgt.webp",
         "link": "https://harghartiranga.com/",
@@ -86,18 +92,19 @@
       },
       {
         "id": 2,
-        "title": "Digital Tribute",
-        "category": "Website Development",
-        "date": "Sep 2023",
-        "image": "./asset/images/project/digitaltribute.webp",
-        "link": "https://digitaltribute.in/",
-        "description": "An interactive platform showcasing India's cultural heritage and historical significance.",
-        "technologies": ["React", "Three.js", "GSAP"]
+        "title": "Rashtragaan",
+        "category": "Government Initiatives",
+        "date": "Apr 2023",
+        "image": "./asset/images/project/raashtragaan.webp",
+        "link": "https://rashtragaan.in/",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
+        "technologies": ["React", "Web Audio API", "Redux", "Express"]
       },
+
       {
         "id": 3,
         "title": "Swachh Bharat",
-        "category": "Website Development",
+        "category": "Government Initiatives",
         "date": "Jul 2023",
         "image": "./asset/images/project/sba.webp",
         "link": "https://swachhatahiseva.gov.in/",
@@ -106,73 +113,162 @@
       },
       {
         "id": 4,
-        "title": "Rashtragaan",
-        "category": "Website Development",
-        "date": "Apr 2023",
-        "image": "./asset/images/project/raashtragaan.webp",
-        "link": "https://rashtragaan.in/",
-        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
-        "technologies": ["React", "Web Audio API", "Redux", "Express"]
+        "title": "Hamara Samvidhan, Hamara Swabhiman",
+        "category": "Government Initiatives",
+        "date": "Sep 2023",
+        "image": "./asset/images/project/constitution.webp",
+        "link": "https://constitution75.com/",
+        "description": "An interactive platform showcasing India's cultural heritage and historical significance.",
+        "technologies": ["React", "Three.js", "GSAP"]
       },
       {
         "id": 5,
-        "title": "Pradhanmantri Sangrahalaya",
-        "category": "Kiosk Apps",
-        "date": "Mar 2023",
-        "image": "./asset/images/project/pmmuseum.webp",
-        "link": "#pm-museum",
-        "description": "Digital platform for the Prime Ministers' Museum with virtual tours and interactive exhibits.",
+        "title": "NITI Aayog Strategy Room",
+        "category": "AI Experiences",
+        "date": "Apr 2023",
+        "image": "./asset/images/project/niti.webp",
+        "link": "inara-ui.netlify.app",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
         "technologies": ["React", "Material UI", "Framer Motion"]
       },
+
       {
         "id": 6,
         "title": "Ruins To Resilience",
-        "category": "Mobile Apps",
+        "category": "Web Platforms",
         "date": "2023",
-        "image": "./asset/images/project/mmmd.webp",
-        "link": "https://merimaatimeradesh.gov.in/",
-        "description": "Campaign portal honoring martyrs and connecting citizens with their heritage through interactive features.",
-        "technologies": ["React", "Redux", "Material UI", "Node.js"]
+        "image": "./asset/images/project/r2r.webp",
+        "link": "https://ruins2resilience.com/",
+        "description": "App ",
+        "technologies": ["React  ", "Redux", "Material UI"]
       },
       {
         "id": 7,
         "title": "Stylin",
         "category": "Mobile Apps",
         "date": "Jul 2023",
-        "image": "./asset/images/project/sba.webp",
-        "link": "https://swachhatahiseva.gov.in/",
+        "image": "./asset/images/project/stylin.webp",
+        "link": "https://play.google.com/store/apps/details?id=com.Tagbin.StyleApp&pcampaignid=web_share",
         "description": "Portal for the national cleanliness campaign with real-time progress tracking and community engagement.",
-        "technologies": ["React", "Chart.js", "Firebase"]
+        "technologies": ["React Native", "Axios", "Redux", "Material UI"]
       },
-      {
-        "id": 8,
-        "title": "Inara",
-        "category": "Mobile Apps",
-        "date": "Apr 2023",
-        "image": "./asset/images/project/raashtragaan.webp",
-        "link": "https://www.inaraskinapp.com/",
-        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
-        "technologies": ["React", "Web Audio API", "Redux", "Express"]
-      },
+
       {
         "id": 9,
         "title": "Pravasi Bharatiya G20 Summit",
-        "category": "Kiosk Apps",
+        "category": "Museum & Kiosk",
         "date": "Mar 2023",
         "image": "./asset/images/project/pmmuseum.webp",
+        "link": "#pm-museum",
+        "description": "Digital platform for the Prime Ministers' Museum with virtual tours and interactive exhibits.",
+        "technologies": [
+          "React",
+          "Material UI",
+          "React Spring",
+          "Page flip",
+          "Context API"
+        ]
+      },
+      {
+        "id": 10,
+        "title": "National Academy Of Customs, Indirect Taxes And Narcotics",
+        "category": "Museum & Kiosk",
+        "date": "2023",
+        "image": "./asset/images/project/nacin.webp",
+        "link": "https://merimaatimeradesh.gov.in/",
+        "description": "Campaign portal honoring martyrs and connecting citizens with their heritage through interactive features.",
+        "technologies": ["React", "Redux", "Material UI", "Node.js"]
+      },
+      {
+        "id": 11,
+        "title": "Pradhanmantri Sangrahalaya",
+        "category": "Museum & Kiosk",
+        "date": "Mar 2023",
+        "image": "./asset/images/project/pmmuseum.webp",
+        "link": "#pm-museum",
+        "description": "Digital platform for the Prime Ministers' Museum with virtual tours and interactive exhibits.",
+        "technologies": ["React", "Bootstrap", "React Spring"]
+      },
+      {
+        "id": 12,
+        "title": "Inara",
+        "category": "Web Platforms",
+        "date": "Apr 2023",
+        "image": "./asset/images/project/inara.webp",
+        "link": "inara-ui.netlify.app",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
+        "technologies": ["React", "Material UI", "Framer Motion"]
+      },
+      {
+        "id": 13,
+        "title": "AI Holobox",
+        "category": "AI Experiences",
+        "date": "Apr 2023",
+        "image": "./asset/images/project/holobox.webp",
+        "link": "inara-ui.netlify.app",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
+        "technologies": ["React", "Material UI", "Framer Motion"]
+      },
+      {
+        "id": 14,
+        "title": "Ask Gita",
+        "category": "AI Experiences",
+        "date": "Mar 2023",
+        "image": "./asset/images/project/askgita.webp",
+        "link": "#pm-museum",
+        "description": "Digital platform for the Prime Ministers' Museum with virtual tours and interactive exhibits.",
+        "technologies": ["React", "Material UI", "Eleven Labs", "OpenAI"]
+      },
+      {
+        "id": 15,
+        "title": "Temple360",
+        "category": "Web Platforms",
+        "date": "Apr 2023",
+        "image": "./asset/images/project/temple360.webp",
+        "link": "https://temple360.in/",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
+        "technologies": ["React", "Material UI", "Framer Motion"]
+      },
+
+      {
+        "id": 16,
+        "title": "Mera Gaon Meri Dharohar",
+        "category": "Web Platforms",
+        "date": "Apr 2023",
+        "image": "./asset/images/project/mgmd.webp",
+        "link": "inara-ui.netlify.app",
+        "description": "A national anthem platform allowing citizens to record and share their renditions for a unified national composition.",
+        "technologies": ["React", "Material UI", "Framer Motion"]
+      },
+      {
+        "id": 17,
+        "title": "War Museum",
+        "category": "Museum & Kiosk",
+        "date": "Mar 2023",
+        "image": "./asset/images/project/warmuseum.webp",
         "link": "#pm-museum",
         "description": "Digital platform for the Prime Ministers' Museum with virtual tours and interactive exhibits.",
         "technologies": ["React", "Material UI", "Framer Motion"]
       },
       {
-        "id": 10,
-        "title": "National Academy Of Customs, Indirect Taxes And Narcotics",
-        "category": "Kiosk Apps",
+        "id": 18,
+        "title": "Ruins To Resilience",
+        "category": "Mobile Apps",
         "date": "2023",
-        "image": "./asset/images/project/mmmd.webp",
-        "link": "https://merimaatimeradesh.gov.in/",
-        "description": "Campaign portal honoring martyrs and connecting citizens with their heritage through interactive features.",
-        "technologies": ["React", "Redux", "Material UI", "Node.js"]
+        "image": "./asset/images/project/r2r.webp",
+        "link": "https://play.google.com/store/apps/details?id=in.cyclone.app&pcampaignid=web_share",
+        "description": "App ",
+        "technologies": ["React Native", "Redux", "Material UI"]
+      },
+      {
+        "id": 19,
+        "title": "G20 DEWG Digital Experience Centre",
+        "category": "AI Experiences",
+        "date": "2023",
+        "image": "./asset/images/project/aig20.webp",
+        "link": "https://play.google.com/store/apps/details?id=in.cyclone.app&pcampaignid=web_share",
+        "description": "The Experience Centre was visited by an impressive 15,000 individuals, with an average of 5,000 people attending daily. The exhibition was inaugurated by the Honorable Chief Minister of Uttar Pradesh Shri Yogi Adityanath and the visitors included foreign delegates, school and college students, local citizens from Lucknow",
+        "technologies": ["React Native", "Redux", "Material UI"]
       }
     ]
   },

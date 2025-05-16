@@ -310,36 +310,6 @@ const headerTabVariants = {
   },
 };
 
-// Add a ripple animation
-const rippleAnimation = {
-  "@keyframes selectRipple": {
-    "0%": {
-      opacity: 0.5,
-      transform: "scale(0.5)",
-    },
-    "100%": {
-      opacity: 0,
-      transform: "scale(1.5)",
-    },
-  },
-};
-
-const SelectionRipple = styled(motion.div)(({ theme }) => ({
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  width: "80px",
-  height: "80px",
-  borderRadius: "50%",
-  background:
-    "radial-gradient(circle, rgba(162, 57, 255, 0.4) 0%, rgba(162, 57, 255, 0) 70%)",
-  transform: "translate(-50%, -50%) scale(0.5)",
-  pointerEvents: "none",
-  zIndex: 0,
-  animation: "selectRipple 0.8s ease-out forwards",
-  ...rippleAnimation,
-}));
-
 // Function to get the appropriate icon based on category
 const getCategoryIcon = (category) => {
   const DevicesIcon = () => (
@@ -390,13 +360,7 @@ const getCategoryIcon = (category) => {
   }
 };
 
-const CategoryTabs = ({
-  categories,
-  selectedCategory,
-  onCategoryChange,
-  showRipple,
-  ripplePosition,
-}) => {
+const CategoryTabs = ({ categories, selectedCategory, onCategoryChange }) => {
   return (
     <ExpandableTabs>
       <AnimatePresence mode="wait">
@@ -415,21 +379,7 @@ const CategoryTabs = ({
             layout="position"
             layoutDependency={selectedCategory}
           >
-            {/* Add ripple effect when category is selected */}
-            {showRipple && selectedCategory === category && (
-              <SelectionRipple
-                initial={{ opacity: 0.5, scale: 0.5 }}
-                animate={{ opacity: 0, scale: 1.5 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                style={{
-                  left: ripplePosition.x,
-                  top: ripplePosition.y,
-                  transformOrigin: `${ripplePosition.x}px ${ripplePosition.y}px`,
-                }}
-              />
-            )}
-
-            <motion.div
+            {/* <motion.div
               initial="initial"
               animate={
                 selectedCategory === category ? "selected" : "unselected"
@@ -442,7 +392,7 @@ const CategoryTabs = ({
               <CategoryIcon isSelected={selectedCategory === category}>
                 {getCategoryIcon(category)}
               </CategoryIcon>
-            </motion.div>
+            </motion.div> */}
             <AnimatedText
               initial="initial"
               animate={

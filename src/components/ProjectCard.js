@@ -1,20 +1,20 @@
-import React from "react";
+import React, { memo } from "react";
 import { Card, Box, Typography, Chip, styled } from "@mui/material";
-import { motion } from "framer-motion";
 
-// Modernized Project Card with glassmorphism
+// Modernized Project Card with optimized performance
 const ModernProjectCard = styled(Card)(({ theme }) => ({
   borderRadius: "22px",
   overflow: "hidden",
   background: "rgba(30, 15, 40, 0.55)",
-  border: "1.5px solid rgba(162, 57, 255, 0.13)",
+  // border: "1.5px solid rgba(162, 57, 255, 0.13)",
   boxShadow: "0 8px 32px 0 rgba(162,57,255,0.10)",
-  backdropFilter: "blur(10px)",
   position: "relative",
-  transition: "transform 0.32s cubic-bezier(.4,2,.6,1), box-shadow 0.32s",
+  transform: "translateZ(0)", // Force GPU acceleration
+  willChange: "transform, box-shadow", // Hint to browser about properties that will change
+  transition: "transform 0.3s ease-out, box-shadow 0.3s ease-out",
   "&:hover": {
-    transform: "scale(1.045)",
-    boxShadow: "0 12px 48px 0 #A239FF33",
+    transform: "translateZ(0) scale(1.03)",
+    boxShadow: "0 12px 48px 0 rgba(162,57,255,0.2)",
     borderColor: "rgba(162, 57, 255, 0.22)",
   },
   height: "100%",
@@ -22,9 +22,6 @@ const ModernProjectCard = styled(Card)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-end",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
   cursor: "pointer",
 }));
 
@@ -79,65 +76,64 @@ const TechChip = styled(Chip)(({ theme }) => ({
   margin: "0 4px 4px 0",
 }));
 
-// Animation variants for projects - optimized for performance
-const projectVariants = {
-  hidden: { y: 15, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "tween", // Changed from spring for more predictable timing
-      duration: 0.25,
-      ease: "easeOut",
-    },
-  },
+// Preload image to avoid layout shifts
+const preloadImage = (src) => {
+  if (!src) return;
+  const img = new Image();
+  img.src = src;
 };
 
 const ProjectCard = ({ project, onClick }) => {
+  // Preload image when component mounts
+  React.useEffect(() => {
+    if (project.image) {
+      preloadImage(project.image);
+    }
+  }, [project.image]);
+
   return (
-    <motion.div variants={projectVariants}>
-      <ModernProjectCard
-        onClick={() => onClick(project)}
+    <ModernProjectCard
+      onClick={() => onClick(project)}
+      sx={{
+        backgroundImage: `url(${project.image})`,
+        backgroundPosition: "top",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Dark gradient overlay for better text readability */}
+      <Box
         sx={{
-          backgroundImage: `url(${project.image})`,
-          backgroundPosition: "top",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%)",
+          zIndex: 1,
         }}
-      >
-        {/* Dark gradient overlay for better text readability */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%)",
-            zIndex: 1,
-          }}
-        />
+      />
 
-        <ModernProjectContent>
-          <ModernProjectTitle>{project.title}</ModernProjectTitle>
+      <ModernProjectContent>
+        <ModernProjectTitle>{project.title}</ModernProjectTitle>
 
-          <ModernProjectDescription>
-            {project.description ||
-              "A sophisticated project showcasing technical excellence and innovative solutions."}
-          </ModernProjectDescription>
+        <ModernProjectDescription>
+          {project.description ||
+            "A sophisticated project showcasing technical excellence and innovative solutions."}
+        </ModernProjectDescription>
 
-          <Box display="flex" flexWrap="wrap" gap={0.8} pt={1}>
-            {(project.technologies || ["React", "Redux", "Material UI"]).map(
-              (tech) => (
-                <TechChip key={tech} label={tech} size="small" />
-              )
-            )}
-          </Box>
-        </ModernProjectContent>
-      </ModernProjectCard>
-    </motion.div>
+        <Box display="flex" flexWrap="wrap" gap={0.8} pt={1}>
+          {(project.technologies || ["React", "Redux", "Material UI"]).map(
+            (tech) => (
+              <TechChip key={tech} label={tech} size="small" />
+            )
+          )}
+        </Box>
+      </ModernProjectContent>
+    </ModernProjectCard>
   );
 };
 
-export default ProjectCard;
+// Memoize component to prevent unnecessary re-renders
+export default memo(ProjectCard);
